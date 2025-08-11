@@ -70,6 +70,7 @@ public class GunSystem : MonoBehaviour
 
 
             //Play gun shot
+            AudioManager.PlayARSound(0);
             if (roundChambered && !safetyOn)
             {
                 if (cHandle.GunCicled())

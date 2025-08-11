@@ -9,6 +9,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource SFXSource;
     [SerializeField]
+    private AudioClip[] audioARList;
+    [SerializeField]
+    private AudioSource SFXARSource;
+    [SerializeField]
     public static AudioManager Instance;
 
     public void Awake()
@@ -19,5 +23,9 @@ public class AudioManager : MonoBehaviour
     public static void PlaySound(int sound)
     {
         Instance.SFXSource.PlayOneShot(Instance.audioList[sound]);
+    }
+    public static void PlayARSound(int sound)
+    {
+        Instance.SFXARSource.PlayOneShot(Instance.audioList[sound]);
     }
 }

@@ -6,7 +6,7 @@ public class FreeTS : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
-        //play sound
+        AudioManager.PlaySound(8);
     }
     public void Completed()
     {
