@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DontPS : MonoBehaviour
+public class ClearGunS : MonoBehaviour
 {
     [SerializeField] GameSystem gameSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

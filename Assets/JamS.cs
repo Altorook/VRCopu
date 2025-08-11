@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DontPS : MonoBehaviour
+public class JamS : MonoBehaviour
 {
     [SerializeField] GameSystem gameSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -10,7 +10,7 @@ public class DontPS : MonoBehaviour
     }
     public void Completed()
     {
-        gameSystem.ChangeStage();
+        gameSystem.UnJammed();
     }
     // Update is called once per frame
     void Update()
