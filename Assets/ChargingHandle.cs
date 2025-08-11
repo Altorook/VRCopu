@@ -101,6 +101,7 @@ public class ChargingHandle : MonoBehaviour
                 gunSystem.ChargingHandlePulled();
             }
         }
-
+        lerpState = Mathf.Lerp(lerpState, 0, 1);
     }
+    
 }

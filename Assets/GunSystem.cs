@@ -65,20 +65,29 @@ public class GunSystem : MonoBehaviour
     }
     public void ShootGun()
     {
-        if(roundChambered && !safetyOn)
+        if (!safetyOn)
         {
-            if (cHandle.GunCicled())
-            {
-                if (shoot.isActiveAndEnabled)
-                {
-                    shoot.Completed();
-                }
-                //gun shot successfully
-            }
-            else
-            {
 
-                //gun Jammed
+
+            //Play gun shot
+            if (roundChambered && !safetyOn)
+            {
+                if (cHandle.GunCicled())
+                {
+                    if (shoot.isActiveAndEnabled)
+                    {
+                        shoot.Completed();
+                    }
+                    //gun shot successfully
+                }
+                else
+                {
+                    if (shoot.isActiveAndEnabled)
+                    {
+                        shoot.Completed();
+                    }
+                    //gun Jammed
+                }
             }
         }
     }
