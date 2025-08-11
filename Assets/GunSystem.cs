@@ -9,6 +9,12 @@ public class GunSystem : MonoBehaviour
 
     [SerializeField] Transform safety;
     [SerializeField] ChargingHandle cHandle;
+
+    [SerializeField] Chambs chamb;
+    [SerializeField] ClearGunS clear;
+    [SerializeField] ShootS shoot;
+    [SerializeField] GameSystem gameSyst;
+    [SerializeField] JamS jam;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,10 +33,22 @@ public class GunSystem : MonoBehaviour
         if (hasMagazine)
         {
             roundChambered = true;
+            if (chamb.isActiveAndEnabled)
+            {
+                chamb.Completed();
+            }
         }
         else
         {
             roundChambered = false;
+            if (clear.isActiveAndEnabled)
+            {
+                clear.Completed();
+            }
+        }
+        if (jam.isActiveAndEnabled)
+        {
+            jam.Completed();
         }
     }
     public void SafetyToggled()
@@ -47,15 +65,29 @@ public class GunSystem : MonoBehaviour
     }
     public void ShootGun()
     {
-        if(roundChambered && !safetyOn)
+        if (!safetyOn)
         {
-            if (cHandle.GunCicled())
+
+
+            //Play gun shot
+            if (roundChambered && !safetyOn)
             {
-                //gun shot successfully
-            }
-            else
-            {
-                //gun Jammed
+                if (cHandle.GunCicled())
+                {
+                    if (shoot.isActiveAndEnabled)
+                    {
+                        shoot.Completed();
+                    }
+                    //gun shot successfully
+                }
+                else
+                {
+                    if (shoot.isActiveAndEnabled)
+                    {
+                        shoot.Completed();
+                    }
+                    //gun Jammed
+                }
             }
         }
     }

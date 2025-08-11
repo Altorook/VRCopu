@@ -20,6 +20,7 @@ public class ChargingHandle : MonoBehaviour
     bool autoMoveHandle;
     bool doReset;
     [SerializeField] float shootHandleMoveSpeed;
+ 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -100,6 +101,7 @@ public class ChargingHandle : MonoBehaviour
                 gunSystem.ChargingHandlePulled();
             }
         }
-
+        lerpState = Mathf.Lerp(lerpState, 0, 1);
     }
+    
 }
