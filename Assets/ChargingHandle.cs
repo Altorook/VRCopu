@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -20,7 +21,11 @@ public class ChargingHandle : MonoBehaviour
     bool autoMoveHandle;
     bool doReset;
     [SerializeField] float shootHandleMoveSpeed;
- 
+
+
+    [SerializeField] TMP_Text lerpT;
+    [SerializeField] TMP_Text isGrab;
+    [SerializeField] TMP_Text other;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -102,6 +107,9 @@ public class ChargingHandle : MonoBehaviour
             }
         }
         lerpState = Mathf.Lerp(lerpState, 0, 1);
+    lerpT.SetText(lerpState.ToString());
+        isGrab.SetText(isGrabbed.ToString());
+        other.SetText(Vector3.Distance(grabStartPos, controllerTransform.position).ToString());
     }
     
 }
