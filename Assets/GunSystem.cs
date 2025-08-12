@@ -15,6 +15,9 @@ public class GunSystem : MonoBehaviour
     [SerializeField] ShootS shoot;
     [SerializeField] GameSystem gameSyst;
     [SerializeField] JamS jam;
+
+   // [SerializeField] RigidBody rb;
+   // [SerializeField] Collider col;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,10 +25,14 @@ public class GunSystem : MonoBehaviour
     }
     public void MagazineIn()
     {
+    //    rb.enabled = false;
+     //   col.enabled = false;
         hasMagazine = true;
     }
     public void MagazineOut()
     {
+    //    rb.enabled = true;
+      //  col.enabled = true;
         hasMagazine = false;
     }
     public void ChargingHandlePulled()
@@ -65,7 +72,7 @@ public class GunSystem : MonoBehaviour
     }
     public void ShootGun()
     {
-        if (!safetyOn)
+        if (!safetyOn && roundChambered)
         {
 
 
