@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JamS : MonoBehaviour
 {
     [SerializeField] GameSystem gameSystem;
     bool hasPlayed;
+    public UnityEvent ChangeCard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
@@ -12,6 +14,7 @@ public class JamS : MonoBehaviour
         {
             StartCoroutine(Sound());
             hasPlayed = true;
+            ChangeCard.Invoke();
         }
     }
     public void Completed()

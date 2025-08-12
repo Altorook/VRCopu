@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClearGunS : MonoBehaviour
 {
     [SerializeField] GameSystem gameSystem;
     bool hasPlayed;
+    public UnityEvent ChangeCard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
@@ -11,6 +13,7 @@ public class ClearGunS : MonoBehaviour
         {
             AudioManager.PlaySound(4);
             hasPlayed = true;
+            ChangeCard.Invoke();
         }
        // AudioManager.PlaySound(4);
     }

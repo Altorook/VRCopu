@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 public class ShootS : MonoBehaviour
 {
     [SerializeField] GameSystem gameSystem;
     bool hasPlayed;
+    public UnityEvent ChangeCard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
@@ -11,6 +13,7 @@ public class ShootS : MonoBehaviour
         {
             StartCoroutine(Sound());
             hasPlayed = true;
+            ChangeCard.Invoke();
         }
         
     }

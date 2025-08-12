@@ -9,7 +9,7 @@ public class DontPS : MonoBehaviour
     {
         if(!hasPlayed)
         {
-            AudioManager.PlaySound(7);
+            AudioManager.PlaySound(1);
             hasPlayed = true;
         }
       

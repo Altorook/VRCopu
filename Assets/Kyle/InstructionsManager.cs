@@ -16,18 +16,14 @@ public class InstructionsManager : MonoBehaviour
     private void Start()
     {
         AudioManager.PlaySound(0);
-    }
-
-    public void PointingAtTarget()
-    {
         Card1.SetActive(true);
         Card2.SetActive(false);
         Card3.SetActive(false);
         Card4.SetActive(false);
         Card5.SetActive(false);
         Card6.SetActive(false);
-        AudioManager.PlaySound(1);
     }
+
     public void CheckSafety()
     {
         Card1.SetActive(false);
@@ -36,7 +32,6 @@ public class InstructionsManager : MonoBehaviour
         Card4.SetActive(false);
         Card5.SetActive(false);
         Card6.SetActive(false);
-        AudioManager.PlaySound(2);
     }
     public void LoadMagAndPullHandle()
     {
@@ -46,7 +41,6 @@ public class InstructionsManager : MonoBehaviour
         Card4.SetActive(false);
         Card5.SetActive(false);
         Card6.SetActive(false);
-        AudioManager.PlaySound(3);
     }
     public void TurnOffSafetyAndPullTrigger()
     {
@@ -56,7 +50,6 @@ public class InstructionsManager : MonoBehaviour
         Card4.SetActive(true);
         Card5.SetActive(false);
         Card6.SetActive(false);
-        AudioManager.PlaySound(4);
     }
     public void UnloadMagAndPullHandle()
     {
@@ -66,7 +59,6 @@ public class InstructionsManager : MonoBehaviour
         Card4.SetActive(false);
         Card5.SetActive(true);
         Card6.SetActive(false);
-        AudioManager.PlaySound(5);
     }
     public void Jam()
     {
@@ -76,6 +68,5 @@ public class InstructionsManager : MonoBehaviour
         Card4.SetActive(false);
         Card5.SetActive(false);
         Card6.SetActive(true);
-        AudioManager.PlaySound(6);
     }
 }
