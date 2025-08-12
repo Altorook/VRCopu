@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DontPS : MonoBehaviour
@@ -9,10 +10,16 @@ public class DontPS : MonoBehaviour
     {
         if(!hasPlayed)
         {
-            AudioManager.PlaySound(1);
+            StartCoroutine(Sound());
             hasPlayed = true;
         }
       
+    }
+    IEnumerator Sound()
+    {
+        AudioManager.PlaySound(0);
+        yield return new WaitForSeconds(6);
+        AudioManager.PlaySound(1);
     }
     public void Completed()
     {

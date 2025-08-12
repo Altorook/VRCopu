@@ -26,6 +26,6 @@ public class AudioManager : MonoBehaviour
     }
     public static void PlayARSound(int sound)
     {
-        Instance.SFXARSource.PlayOneShot(Instance.audioList[sound]);
+        Instance.SFXARSource.PlayOneShot(Instance.audioARList[sound]);
     }
 }

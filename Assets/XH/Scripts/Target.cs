@@ -8,6 +8,7 @@ public class Target : MonoBehaviour
         // may been change color
         //play sound here
         Debug.Log("I am the target ");
+
     }
 
   

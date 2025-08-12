@@ -7,6 +7,7 @@ public class NotShootObject : MonoBehaviour
     {
         //sound here
         Debug.Log("please not shoot me ");
+        AudioManager.PlaySound(7);
     }
 
     

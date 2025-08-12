@@ -5,7 +5,7 @@ public class GunSystem : MonoBehaviour
 {
     bool hasMagazine;
     bool roundChambered;
-    bool safetyOn;
+    bool safetyOn = true;
 
     [SerializeField] Transform safety;
     [SerializeField] ChargingHandle cHandle;
@@ -56,11 +56,11 @@ public class GunSystem : MonoBehaviour
         safetyOn = !safetyOn;
         if (safetyOn)
         {
-            safety.localRotation = Quaternion.Euler(0, 0, 90);
+            safety.localRotation = Quaternion.Euler(0, 0, -90);
         }
         else
         {
-            safety.localRotation = Quaternion.Euler(0, 0, -90);
+            safety.localRotation = Quaternion.Euler(0, 0, 90);
         }
     }
     public void ShootGun()

@@ -15,7 +15,7 @@ public class InstructionsManager : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.PlaySound(0);
+      //  AudioManager.PlaySound(0);
         Card1.SetActive(true);
         Card2.SetActive(false);
         Card3.SetActive(false);

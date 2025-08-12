@@ -24,7 +24,7 @@ public class JamS : MonoBehaviour
     IEnumerator Sound()
     {
         AudioManager.PlaySound(9);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6.5f);
         AudioManager.PlaySound(10);
     }
     // Update is called once per frame

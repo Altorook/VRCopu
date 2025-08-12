@@ -24,7 +24,7 @@ public class ShootS : MonoBehaviour
     IEnumerator Sound()
     {
         AudioManager.PlaySound(3);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6.5f);
         AudioManager.PlaySound(6);
     }
     // Update is called once per frame
