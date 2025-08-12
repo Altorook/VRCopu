@@ -3,10 +3,16 @@ using System.Collections;
 public class ShootS : MonoBehaviour
 {
     [SerializeField] GameSystem gameSystem;
+    bool hasPlayed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
-        StartCoroutine(Sound());
+        if (!hasPlayed)
+        {
+            StartCoroutine(Sound());
+            hasPlayed = true;
+        }
+        
     }
     public void Completed()
     {

@@ -89,7 +89,9 @@ public class ChargingHandle : MonoBehaviour
                 }
             }
         }
-        else if (!isGrabbed)
+
+
+        if (!isGrabbed)
         {
             ReleasedChargingHandle();
             if (lerpState <= 0)
@@ -97,19 +99,19 @@ public class ChargingHandle : MonoBehaviour
                 isPulledBack = false;
             }
         }
-        else
+        if(isGrabbed)
         {
-            lerpState = Mathf.Clamp(Vector3.Distance(grabStartPos, controllerTransform.position) / distanceToPull, 0, 1);
+            lerpState = Vector3.Distance(grabStartPos, controllerTransform.position) / distanceToPull;
             if (lerpState >= 1 && !isPulledBack)
             {
                 isPulledBack = true;
                 gunSystem.ChargingHandlePulled();
             }
         }
-        lerpState = Mathf.Lerp(lerpState, 0, 1);
+        lerpState = Mathf.Clamp(lerpState, 0, 1);
     lerpT.SetText(lerpState.ToString());
         isGrab.SetText(isGrabbed.ToString());
-        other.SetText(Vector3.Distance(grabStartPos, controllerTransform.position).ToString());
+        other.SetText(autoMoveHandle.ToString() + "    " + Vector3.Distance(grabStartPos, controllerTransform.position) / distanceToPull);
     }
     
 }
